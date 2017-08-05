@@ -51,3 +51,10 @@ func main() {
 	fmt.Printf("Outside if %v\n", err)
 }
 ```
+## Surprises in Go
+
+### Golang Receiver vs Function Argument
+
+https://grisha.org/blog/2016/09/22/golang-receiver-vs-function/
+
+Why does go has receivers at all?

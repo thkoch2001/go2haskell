@@ -1,0 +1,2 @@
+-- everything in Haskell is immutable.
+-- What was the question?
