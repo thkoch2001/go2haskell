@@ -58,3 +58,8 @@ func main() {
 https://grisha.org/blog/2016/09/22/golang-receiver-vs-function/
 
 Why does go has receivers at all?
+
+## links
+
+*  https://www.slideshare.net/arschles/functional-programming-in-go
+*  [Kelsey Hightower - Self Deploying Kubernetes Applications](https://www.youtube.com/watch?v=XPC-hFL-4lU)
