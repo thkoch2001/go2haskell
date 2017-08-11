@@ -3,6 +3,7 @@
 -- https://hackage.haskell.org/package/vector
 -- https://stackoverflow.com/questions/9611904/haskell-listes-arrays-vectors-sequences
 -- https://www.haskell.org/tutorial/arrays.html
+-- http://www.tweag.io/posts/2017-08-09-array-programming-in-haskell.html
 
 
 -- Besides the easy to use list type, Haskell also has Vector variants with different characteristics.
