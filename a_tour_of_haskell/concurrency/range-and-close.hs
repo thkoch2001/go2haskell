@@ -7,7 +7,7 @@ import Control.Concurrent.STM (atomically)
 import Control.Concurrent.STM.TMQueue (closeTMQueue, newTMQueue, readTMQueue, TMQueue, writeTMQueue)
 import Control.Monad (forM_)
 
--- Most terrible implementation of fibonacci in Haskell with mutable variables (MVar)
+-- Un-haskelly implementation of fibonacci with un-handy mutable variables (MVar) to match the go example
 fibonacci n c = do
   x <- newMVar (0::Integer)
   y <- newMVar (1::Integer)
@@ -28,11 +28,12 @@ main = do
     forkIO $ fibonacci 10 c
     loopChannel c $ (\i -> print (i::Integer))
 
--- the below function would maybe be a good addition to Haskells STM library
 
+-- helper function to mimic Go's "for range" over a channel
 loopChannel :: TMQueue a -> (a -> IO ()) -> IO ()
 loopChannel ch f = loopChannel_
   where
+    loopChannel_ :: IO ()
     loopChannel_ = do
       mi <- atomically $ readTMQueue ch
       case mi of
