@@ -63,3 +63,4 @@ Why does go has receivers at all?
 
 *  https://www.slideshare.net/arschles/functional-programming-in-go
 *  [Kelsey Hightower - Self Deploying Kubernetes Applications](https://www.youtube.com/watch?v=XPC-hFL-4lU)
+* https://lotz84.github.io/haskellbyexample
