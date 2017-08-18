@@ -1,5 +1,5 @@
-import Control.Concurrent (forkIO)
-import Control.Concurrent.Chan (newChan, readChan, writeChan)
+import           Control.Concurrent      (forkIO)
+import           Control.Concurrent.Chan (newChan, readChan, writeChan)
 
 sumFork s c = writeChan c (sum s)
 

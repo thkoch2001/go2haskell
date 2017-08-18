@@ -5,8 +5,9 @@
 
 -- Try to uncomment the third writeTBQueue line to see Haskells deadlock detection!
 
-import Control.Concurrent.STM.TBQueue (newTBQueue, writeTBQueue, readTBQueue)
-import Control.Concurrent.STM (atomically)
+import           Control.Concurrent.STM         (atomically)
+import           Control.Concurrent.STM.TBQueue (newTBQueue, readTBQueue,
+                                                 writeTBQueue)
 
 main = do
   (v1, v2) <- atomically $ do

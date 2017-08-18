@@ -2,10 +2,14 @@
 -- apt-get install libghc-stm-chans-dev
 -- nice intro: https://www.snoyman.com/blog/2016/11/haskells-missing-concurrency-basics
 
-import Control.Concurrent (forkIO, newMVar, readMVar, swapMVar)
-import Control.Concurrent.STM (atomically)
-import Control.Concurrent.STM.TMQueue (closeTMQueue, newTMQueue, readTMQueue, TMQueue, writeTMQueue)
-import Control.Monad (forM_)
+import           Control.Concurrent             (forkIO, newMVar, readMVar,
+                                                 swapMVar)
+import           Control.Concurrent.STM         (atomically)
+import           Control.Concurrent.STM.TMQueue (TMQueue, closeTMQueue,
+                                                 newTMQueue, readTMQueue,
+                                                 writeTMQueue)
+import           Control.Monad                  (forM_)
+
 
 -- Un-haskelly implementation of fibonacci with un-handy mutable variables (MVar) to match the go example
 fibonacci n c = do
@@ -24,9 +28,9 @@ fibonacci n c = do
 
 
 main = do
-    c <- atomically $ newTMQueue
+    c <- atomically newTMQueue
     forkIO $ fibonacci 10 c
-    loopChannel c $ (\i -> print (i::Integer))
+    loopChannel c (\i -> print (i::Integer))
 
 
 -- helper function to mimic Go's "for range" over a channel

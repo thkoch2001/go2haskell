@@ -10,8 +10,8 @@ data Vertex = Vertex Double Double deriving (Show)
 
 m = Map.fromList $
   map (\ (x, y, z) -> (x, Vertex y z))
-    [("Bell Labs", 40.68433, (-74.39967))
-   , ("Google", 37.42202, (-122.08408))
+    [("Bell Labs", 40.68433, -74.39967)
+   , ("Google", 37.42202, -122.08408)
     ]
 
 main = print m

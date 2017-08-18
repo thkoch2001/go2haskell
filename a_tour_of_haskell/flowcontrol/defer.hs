@@ -3,6 +3,4 @@
 -- Go's defer can be easily implemented in Haskell:
 defer = flip (>>)
 
-main = do
-  defer (putStrLn "world") $ do
-    putStrLn "hello"
+main = defer (putStrLn "world") $ putStrLn "hello"

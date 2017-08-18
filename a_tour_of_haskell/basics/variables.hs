@@ -6,5 +6,5 @@ python = False
 java = False
 
 main = do
-  i <- return 0
+  let i = 0
   putStrLn (show c ++ show python ++ show java ++ show i)

@@ -1,8 +1,8 @@
-import Data.Foldable (forM_)
-import Data.List (intercalate)
-import Data.Word
+import           Data.Foldable   (forM_)
+import           Data.List       (intercalate)
 import qualified Data.Map.Strict as Map
-import Text.Printf
+import           Data.Word
+import           Text.Printf
 
 newtype IPAddr = IPAddr (Word8, Word8, Word8, Word8)
 
@@ -14,5 +14,5 @@ main = do
              , ("googleDNS", IPAddr (8, 8, 8, 8))
               ]
   forM_ hosts ( \ (name, ip) ->
-    putStrLn (name ++ ": " ++ (show ip))
+    putStrLn (name ++ ": " ++ show ip)
     )

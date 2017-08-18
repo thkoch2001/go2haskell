@@ -14,6 +14,6 @@ run _    = Left (MyError "This is not the answer.")
 main = do
   putStrLn "What is the answer?"
   input <- getLine
-  case (run input) of
-    Left err -> print err
+  case run input of
+    Left err     -> print err
     Right result -> print result

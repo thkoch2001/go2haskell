@@ -4,8 +4,8 @@
 data Vertex = Vertex Double Double
 
 -- abs is already defined in Haskells standard library
-my_abs (Vertex x y) = sqrt (x*x + y*y)
+myAbs (Vertex x y) = sqrt (x*x + y*y)
 
 main = do
   let v = Vertex 3 4
-  print (my_abs v)
+  print (myAbs v)

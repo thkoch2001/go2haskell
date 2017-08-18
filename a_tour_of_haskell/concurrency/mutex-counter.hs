@@ -1,10 +1,10 @@
 -- We could use a mutex, but a STM TVar is just so much nicer.
 
-import Control.Concurrent (forkIO, threadDelay)
-import Control.Concurrent.STM (atomically)
-import Control.Concurrent.STM.TVar (newTVar, readTVar, modifyTVar')
-import Control.Monad (forM_)
-import qualified Data.Map.Strict as Map
+import           Control.Concurrent          (forkIO, threadDelay)
+import           Control.Concurrent.STM      (atomically)
+import           Control.Concurrent.STM.TVar (modifyTVar', newTVar, readTVar)
+import           Control.Monad               (forM_)
+import qualified Data.Map.Strict             as Map
 
 inc c key = atomically $ modifyTVar' c $ Map.insertWith (+) key 1
 

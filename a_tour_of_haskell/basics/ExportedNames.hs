@@ -6,11 +6,12 @@
 -- In Haskell functions are lowercase and modules and types have an uppercase first letter..
 
 module ExportedNames (
-  public_thing
-)
-where
+  publicThing
+) where
 
-public_thing = "you can see me"
+publicThing :: String
+publicThing = "you can see me"
 
-private_thing = "you can not see me"
+privateThing :: String
+privateThing = "you can not see me"
 
