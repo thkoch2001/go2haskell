@@ -1,5 +1,8 @@
--- TODO https://tour.golang.org/moretypes/14
-import           Data.List (intercalate)
+-- Every type with a total order can be used to index a Haskell array.
+-- Thus we don't need an array of arrays but can use a two dimensional
+-- index.
+
+import           Data.Array (bounds, listArray, (!), (//))
 
 data Player = X | O deriving (Show)
 
@@ -9,13 +12,23 @@ instance Show Field where
   show Empty   = "_"
   show (Set p) = show p
 
-data Board = Board [[Field]]
-
-instance Show Board where
-  show (Board rows) = intercalate "\n" $ map unwords $ fmap (fmap show) rows
+showBoard board =
+  let
+    ((xmin, ymin), (xmax, ymax)) = bounds board
+  in
+    unlines [unwords [show (board ! (x, y)) | x <- [xmin..xmax]] | y <- [ymin..ymax]]
 
 main = do
   -- Create a tic-tac-toe board.
-  let board = Board $ replicate 3 (replicate 3 Empty)
+  let board = listArray ((0,0), (2, 2)) (repeat Empty)
 
-  print board
+  -- The players take turns.
+  let turns = [((0, 0), Set X)
+             , ((2, 2), Set O)
+             , ((1, 2), Set X)
+             , ((1, 0), Set O)
+             , ((0, 2), Set X)
+             ]
+
+  let board' = board // turns
+  putStrLn $ showBoard board'
