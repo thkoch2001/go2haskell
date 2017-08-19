@@ -16,7 +16,7 @@ showBoard board =
   let
     ((xmin, ymin), (xmax, ymax)) = bounds board
   in
-    unlines [unwords [show (board ! (x, y)) | x <- [xmin..xmax]] | y <- [ymin..ymax]]
+    unlines [unwords [show (board ! (x, y)) | y <- [ymin..ymax]] | x <- [xmin..xmax]]
 
 main = do
   -- Create a tic-tac-toe board.
