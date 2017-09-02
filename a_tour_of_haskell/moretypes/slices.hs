@@ -4,7 +4,7 @@
 -- https://stackoverflow.com/questions/9611904/haskell-listes-arrays-vectors-sequences
 -- https://www.haskell.org/tutorial/arrays.html
 -- http://www.tweag.io/posts/2017-08-09-array-programming-in-haskell.html
-
+-- TODO: check https://blog.jle.im/entry/fixed-length-vector-types-in-haskell.html
 
 -- Besides the easy to use list type, Haskell also has Vector variants with different characteristics.
 -- An unboxed vector can only contain primitive types that are stored inline in the allocated memory slice.

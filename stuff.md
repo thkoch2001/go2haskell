@@ -64,3 +64,4 @@ Why does go has receivers at all?
 *  https://www.slideshare.net/arschles/functional-programming-in-go
 *  [Kelsey Hightower - Self Deploying Kubernetes Applications](https://www.youtube.com/watch?v=XPC-hFL-4lU)
 * https://lotz84.github.io/haskellbyexample
+* http://www.tweag.io/posts/2017-08-17-inline-code.html - how complex would inline-go be?
