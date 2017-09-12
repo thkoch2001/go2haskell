@@ -51,6 +51,19 @@ func main() {
 	fmt.Printf("Outside if %v\n", err)
 }
 ```
+## types vs. tests
+
+- tests are code that needs maintenance
+- refactoring code requires also refactoring of (unit) tests
+
+- types make a language slower to compile. But only compilation + running the
+  testsuite reveals a meaningful, useful artifact. Compiler finds logic errors
+  faster in typed code than with test suites.
+
+- It's not exclusive types vs. tests:
+  - types: logic forall
+  - tests: logic there exists
+
 ## Surprises in Go
 
 ### Golang Receiver vs Function Argument
